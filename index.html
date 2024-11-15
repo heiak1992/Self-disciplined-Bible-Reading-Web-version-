@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>羚羊自律读经</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body class="light-theme">
+    <div class="app-container">
+        <!-- 侧边设置面板 -->
+        <div class="settings-panel" id="settingsPanel">
+            <div class="settings-header">
+                <h3>设置</h3>
+                <button class="close-btn" id="closeSettings">×</button>
+            </div>
+            <div class="settings-content">
+                <div class="setting-item">
+                    <h4>主题设置</h4>
+                    <div class="theme-options">
+                        <button class="theme-btn light-btn" data-theme="light">浅色</button>
+                        <button class="theme-btn warm-btn" data-theme="warm">暖色</button>
+                        <button class="theme-btn dark-btn" data-theme="dark">深色</button>
+                    </div>
+                </div>
+                <div class="setting-item">
+                    <h4>计时设置</h4>
+                    <select id="timerDuration">
+                        <option value="15">15分钟</option>
+                        <option value="25" selected>25分钟</option>
+                        <option value="30">30分钟</option>
+                        <option value="45">45分钟</option>
+                        <option value="60">60分钟</option>
+                    </select>
+                </div>
+                <div class="setting-item">
+                    <h4>屏幕常亮</h4>
+                    <label class="switch">
+                        <input type="checkbox" id="keepScreenOn">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- 主界面 -->
+        <main class="main-content">
+            <header class="app-header">
+                <h1>羚羊自律读经</h1>
+                <button class="settings-btn" id="openSettings">
+                    <span class="material-icons">settings</span>
+                </button>
+            </header>
+
+            <div class="scripture-section">
+                <div class="scripture-content">
+                    <p class="scripture-text">"你们查考圣经，因你们以为内中有永生；给我作见证的就是这经。"</p>
+                    <p class="scripture-reference">— 约翰福音 5:39</p>
+                </div>
+            </div>
+
+            <div class="timer-section">
+                <div class="timer-display" id="timerDisplay">25:00</div>
+                <div class="timer-controls">
+                    <button class="control-btn" id="startTimer">
+                        <span class="material-icons">play_arrow</span>
+                        开始专注读经
+                    </button>
+                </div>
+            </div>
+
+            <div class="meditation-section">
+                <h3>默想问题</h3>
+                <div class="meditation-questions">
+                    <p>1. 这段经文如何帮助你更好地理解神的话语？</p>
+                    <p>2. 你从这段经文中得到什么启发？</p>
+                    <p>3. 如何将这段经文应用到你的生活中？</p>
+                </div>
+                <textarea 
+                    id="meditationInput"
+                    placeholder="在这里记录你的默想感悟..."
+                    rows="6"
+                ></textarea>
+            </div>
+
+            <div class="feedback-section">
+                <button class="feedback-btn" id="feedbackBtn">
+                    <span class="material-icons">feedback</span>
+                    问题反馈
+                </button>
+                <button class="help-btn" id="helpBtn">
+                    <span class="material-icons">help</span>
+                    使用帮助
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <!-- 反馈表单对话框 -->
+    <div class="modal" id="feedbackModal">
+        <div class="modal-content">
+            <h3>问题反馈</h3>
+            <form id="feedbackForm">
+                <textarea placeholder="请描述您遇到的问题或建议..."></textarea>
+                <input type="email" placeholder="您的邮箱（选填）" value="heiak@foxmail.com">
+                <div class="modal-buttons">
+                    <button type="button" class="cancel-btn">取消</button>
+                    <button type="submit" class="submit-btn">提交</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 帮助对话框 -->
+    <div class="modal" id="helpModal">
+        <div class="modal-content">
+            <h3>使用帮助</h3>
+            <div class="help-content">
+                <h4>基本功能</h4>
+                <ul>
+                    <li>点击"开始专注读经"开始计时</li>
+                    <li>在设置中可以调整主题和时长</li>
+                    <li>默想内容会自动保存</li>
+                </ul>
+                <h4>快捷键</h4>
+                <ul>
+                    <li>空格键：开始/暂停计时</li>
+                    <li>ESC键：关闭弹窗</li>
+                </ul>
+            </div>
+            <button class="close-btn">关闭</button>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
+<div class="theme-options">
+    <button class="theme-btn light-btn" data-theme="light">浅色</button>
+    <button class="theme-btn warm-btn" data-theme="warm">暖色</button>
+    <button class="theme-btn dark-btn" data-theme="dark">深色</button>
+</div>

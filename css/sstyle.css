@@ -1,0 +1,333 @@
+:root {
+    /* 浅色主题 */
+    --light-bg: #f5f5f5;
+    --light-text: #333333;
+    --light-primary: #4a90e2;
+    --light-secondary: #f0f0f0;
+    
+    /* 暖色主题 */
+    --warm-bg: #fff9e6;
+    --warm-text: #5c4b37;
+    --warm-primary: #c4a484;
+    --warm-secondary: #f5e6d3;
+    
+    /* 深色主题 */
+    --dark-bg: #2c3e50;
+    --dark-text: #ecf0f1;
+    --dark-primary: #3498db;
+    --dark-secondary: #34495e;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Microsoft YaHei', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* 主题样式 */
+body.light-theme {
+    background-color: var(--light-bg);
+    color: var(--light-text);
+}
+
+body.warm-theme {
+    background-color: var(--warm-bg);
+    color: var(--warm-text);
+}
+
+body.dark-theme {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+}
+
+.app-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+}
+
+/* 头部样式 */
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    margin-bottom: 30px;
+}
+
+.app-header h1 {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+/* 经文区域样式 */
+.scripture-section {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 40px;
+    margin-bottom: 30px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.scripture-text {
+    font-size: 1.8rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.scripture-reference {
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+/* 计时器样式 */
+.timer-section {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.timer-display {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-family: monospace;
+}
+
+.timer-controls {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* 默想区域样式 */
+.meditation-section {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+.meditation-questions {
+    margin: 20px 0;
+}
+
+.meditation-questions p {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    color: inherit;
+    resize: vertical;
+}
+
+/* 按钮样式 */
+button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s;
+}
+
+.control-btn {
+    background: var(--light-primary);
+    color: white;
+    font-weight: 500;
+}
+
+.control-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* 设置面板样式 */
+.settings-panel {
+    position: fixed;
+    right: -300px;
+    top: 0;
+    width: 300px;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: right 0.3s;
+    z-index: 1000;
+}
+
+.settings-panel.active {
+    right: 0;
+}
+
+/* 反馈区域样式 */
+.feedback-section {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+/* 模态框样式 */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1100;
+}
+
+.modal-content {
+    position: relative;
+    background: white;
+    width: 90%;
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 15px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .app-container {
+        padding: 10px;
+    }
+
+    .scripture-text {
+        font-size: 1.4rem;
+    }
+
+    .timer-display {
+        font-size: 2.5rem;
+    }
+
+    .settings-panel {
+        width: 100%;
+        right: -100%;
+    }
+}
+/* 修改主题相关的CSS部分 */
+
+/* 1. 首先定义主题变量 */
+:root {
+    /* 浅色主题变量 */
+    --light-bg: #f5f5f5;
+    --light-text: #333333;
+    --light-primary: #4a90e2;
+    --light-secondary: #f0f0f0;
+    
+    /* 暖色主题变量 */
+    --warm-bg: #fff9e6;
+    --warm-text: #5c4b37;
+    --warm-primary: #c4a484;
+    --warm-secondary: #f5e6d3;
+    
+    /* 深色主题变量 */
+    --dark-bg: #2c3e50;
+    --dark-text: #ecf0f1;
+    --dark-primary: #3498db;
+    --dark-secondary: #34495e;
+}
+
+/* 2. 修改body的主题样式 */
+body {
+    font-family: 'Microsoft YaHei', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+    
+    /* 默认使用浅色主题 */
+    background-color: var(--light-bg);
+    color: var(--light-text);
+}
+
+/* 3. 定义各个主题的具体样式 */
+body.light-theme {
+    background-color: var(--light-bg);
+    color: var(--light-text);
+}
+
+body.light-theme .control-btn,
+body.light-theme .submit-btn {
+    background-color: var(--light-primary);
+    color: white;
+}
+
+body.warm-theme {
+    background-color: var(--warm-bg);
+    color: var(--warm-text);
+}
+
+body.warm-theme .control-btn,
+body.warm-theme .submit-btn {
+    background-color: var(--warm-primary);
+    color: white;
+}
+
+body.dark-theme {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+}
+
+body.dark-theme .control-btn,
+body.dark-theme .submit-btn {
+    background-color: var(--dark-primary);
+    color: white;
+}
+
+/* 4. 主题按钮样式 */
+.theme-options {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.theme-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.theme-btn:hover {
+    transform: translateY(-2px);
+}
+
+.light-btn {
+    background-color: var(--light-bg);
+    color: var(--light-text);
+    border: 1px solid #ddd;
+}
+
+.warm-btn {
+    background-color: var(--warm-bg);
+    color: var(--warm-text);
+    border: 1px solid #e6d5c5;
+}
+
+.dark-btn {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+    border: 1px solid #34495e;
+}
